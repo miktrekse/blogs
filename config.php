@@ -1,12 +1,11 @@
 <?php
-
 return [
         "database" => [
-            "host" => "server43.areait.lv",
+            "host" => "localhost",
             "port" => "3306",
-            "user" => "jekabsar_reader",
-            "password" => "Christmas2022",
-            "dbname" => "jekabsar_christmas",
+            "user" => "root",
+            "password" => "",
+            "dbname" => "blog_ipb23",
             "charset" => "utf8mb4"
         ]
 ];
