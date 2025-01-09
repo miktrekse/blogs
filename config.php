@@ -1,11 +1,12 @@
 <?php
+
 return [
-        "database" => [
-            "host" => "localhost",
-            "port" => "3306",
-            "user" => "root",
-            "password" => "",
-            "dbname" => "blog_ipb23",
-            "charset" => "utf8mb4"
-        ]
+    "database"=>[
+        "host"=>"localhost",
+        "port"=>"3306",
+        "password"=>"",
+        "user"=>"root",
+        "charset"=>"utf8mb4",
+        "dbname"=>"blog_ipb23"
+    ]
 ];
