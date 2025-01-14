@@ -1,8 +1,4 @@
  <?php
-require "Database.php";
-$config = require ("config.php");
-
-$db = new Database($config["database"]);
 
 $select = "SELECT * FROM categories";
 $params = [];
@@ -32,4 +28,5 @@ foreach ($category_name as $category_names) {
 echo "</ul>";
 echo "</div>";
 echo "</div>";
+require "components/categories.view.php"
 ?>

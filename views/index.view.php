@@ -17,7 +17,7 @@ if (count($posts) == 0){
 <?php
 foreach($posts as $post){
     ?>
-    <li> <?= $post["category_name"]   ?>  </li>
+    <li> <?= $post["content"]   ?>  </li>
 <?php  }   ?>
 </ul>
 <?php require "components/footer.php"; ?>
