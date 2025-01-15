@@ -28,5 +28,5 @@ foreach ($category_name as $category_names) {
 echo "</ul>";
 echo "</div>";
 echo "</div>";
-require "components/categories.view.php"
+require "components/categories.view.php";
 ?>

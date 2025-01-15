@@ -1,5 +1,5 @@
-<?php require "components/header.php"; ?>
-<?php require "components/navbar.php"; ?>
+<?php require "views/components/header.php"; ?>
+<?php require "views/components/navbar.php"; ?>
 <h1>BLOGS</h1>
  <form>
  <input name='search' value='<?= $_GET['search'] ?? "" ?>' />
@@ -17,10 +17,10 @@ if (count($posts) == 0){
 <?php
 foreach($posts as $post){
     ?>
-    <li> <?= $post["content"]   ?>  </li>
+    <li><a href="show?id=<?= $post["id"] ?>"> <?= $post["content"]   ?></a>  </li>
 <?php  }   ?>
 </ul>
-<?php require "components/footer.php"; ?>
+<?php require "views/components/footer.php"; ?>
  
  
  
