@@ -2,8 +2,8 @@
 
 class Database {
 
-    public $pdo;
-    public function __construct($config) {
+    public  $pdo;
+    public  function __construct($config) {
         $dsn = "mysql:" . http_build_query($config, "", ";");
 
         $this->pdo = new PDO($dsn);

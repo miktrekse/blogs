@@ -1,6 +1,7 @@
 <?php
 require "Validator.php";
-
+if (!isset($_GET["id"])){
+    echo "nav atrasts";
  $errors = [];
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if (!Validator::string($_POST["content"], max: 50)){
@@ -14,7 +15,8 @@ if (empty($errors)) {
 exit();
 }
 }
+}
 
 $pageTitle = "Izveidot ierakstu";
-require "views/posts/create.view.php";
+require "views/posts/edit.view.php";
 
