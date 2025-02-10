@@ -1,6 +1,6 @@
 <?php require "views/components/header.php"; ?>
 <?php require "views/components/navbar.php"; ?>
-<h1>Izveidot bloga ierakstu</h1>
+<h1>Edit</h1>
 <form method="POST">
 <label><input type="hidden" name="id" value="<?= $_POST['id'] ?? '' ?>" /></label>
 <label><input name="content" value="<?= $_POST['content'] ?? '' ?>" /></label>
