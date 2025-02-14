@@ -1,22 +1,35 @@
 <?php
-if (!isset($_GET["id"])){
-    echo "nav atrasts";
+require "Validator.php";
+if (!isset($_GET["id"]) || $_GET["id"]==""){
+    redirectIfNotFound();
+}
  $errors = [];
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    if (!Validator::string($_POST["content"], max: 50)){
+    if (!Validator::string($post["content"], max:50)){
         $errors["content"] = "Saturam jābūt ievadītam, bet ne garākam par 50 rakstzīmēm";
     }
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $params = ["content" => $_POST["content"]];
+
+if (empty($errors)) {
     $sql = "UPDATE posts
     SET content = :content
     WHERE id = :id;";
+        $params = ["id" =>$post["id"],"content"  => $post["content"]];
     $post = $db->query($sql, $params)->fetch();
-    header("Location: /"); 
-exit();
+    header("Location:/show?id=".$_POST["id"]); 
 }
+
 }
-} 
+$sql = "SELECT * FROM posts where id = :id ";
+$params = ["id" => $_GET["id"]];
+$post = $db->query($sql, $params)->fetch();
+
+if(!$post){
+    redirectIfNotFound();
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($errors)){
+$post["content"] = $post["content"];
+}
 
 $pageTitle = "Edit";
 require "views/posts/edit.view.php";
