@@ -5,7 +5,7 @@ if (!isset($_GET["id"]) || $_GET["id"]==""){
 }
  $errors = [];
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    if (!Validator::string($post["content"], max:50)){
+    if (!Validator::string($_POST["content"], max:50)){
         $errors["content"] = "Saturam jābūt ievadītam, bet ne garākam par 50 rakstzīmēm";
     }
 
@@ -13,8 +13,8 @@ if (empty($errors)) {
     $sql = "UPDATE posts
     SET content = :content
     WHERE id = :id;";
-        $params = ["id" =>$post["id"],"content"  => $post["content"]];
-    $post = $db->query($sql, $params)->fetch();
+            $params = ["id" =>$_POST["id"],"content"  => $_POST["content"]];
+        $post = $db->query($sql, $params)->fetch();
     header("Location:/show?id=".$_POST["id"]); 
 }
 
@@ -28,7 +28,7 @@ if(!$post){
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($errors)){
-$post["content"] = $post["content"];
+$post["content"] = $_POST["content"];
 }
 
 $pageTitle = "Edit";
