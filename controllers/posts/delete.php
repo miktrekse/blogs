@@ -1,10 +1,18 @@
 <?php
-
+if($_SERVER["REQUEST_METHOD"] == "GET"){
+    redirectIfNotFound();  
+    exit();
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $post = $_POST['id'];
 
-    if (is_numeric($post)) {
-        $sql = "DELETE FROM posts WHERE id = $post";
+    if (is_numeric($_POST['id'])) {
+        $sql = "DELETE FROM posts
+    WHERE id = :id;";
+            $params = ["id" =>$_POST["id"]];
+        $post = $db->query($sql, $params)->fetch();
+    header("Location:/"); 
+    exit();
+}
 }
 
