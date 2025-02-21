@@ -4,7 +4,7 @@ require "Validator.php";
  $errors = [];
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if (!Validator::string($_POST["category_name"], max: 50)){
-        $errors["content"] = "Saturam jābūt ievadītam, bet ne garākam par 50 rakstzīmēm";
+        $errors["category_name"] = "Saturam jābūt ievadītam, bet ne garākam par 50 rakstzīmēm";
     }
 if (empty($errors)) {
     $params = ["category_name" => $_POST["category_name"]];
@@ -16,5 +16,5 @@ exit();
 }
 
 $pageTitle = "Izveidot ierakstu";
-require "views/posts/categories.create.view.php";
+require "views/categories/categories.create.view.php";
 

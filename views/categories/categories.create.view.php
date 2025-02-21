@@ -2,10 +2,10 @@
 <?php require "views/components/navbar.php"; ?>
 <h1>Izveidot categorijas ierakstu</h1>
 <form method="POST">
-<label><input name="category_names" value="<?= $_POST['category_names'] ?? '' ?>" /></label>
+<label><input name="category_name" value="<?= $_POST['category_name'] ?? '' ?>" /></label>
 <button>Sigma</button>
-<?php if(isset($errors["category_names"])) { ?>
-       <p><?= $errors["category_names"] ?></p>
+<?php if(isset($errors["category_name"])) { ?>
+       <p><?= $errors["category_name"] ?></p>
      <?php } ?>
      
 </form>

@@ -17,7 +17,7 @@ if (count($categories) == 0){
 <?php
 foreach($categories as $category){
     ?>
-    <li><a href="show?id=<?= $category["id"] ?>"> <?= htmlspecialchars($category_names["content"])   ?></a>  </li>
+    <li><a href="show?id=<?= $category["id"] ?>"> <?= htmlspecialchars($category["category_name"])   ?></a>  </li>
 <?php  }   ?>
 </ul>
 <?php require "views/components/footer.php"; ?>
