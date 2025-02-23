@@ -1,5 +1,9 @@
-<?php require "views/components/header.php"; ?>
-<?php require "views/components/navbar.php"; ?>
+<?php
+require "views/components/header.php"; 
+require "views/components/navbar.php"; 
+$categories = $categories ?? [];
+?>
+
 <h1>Categories</h1>
  <form>
  <input name='search' value='<?= $_GET['search'] ?? "" ?>' />

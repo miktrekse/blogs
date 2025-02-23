@@ -10,8 +10,8 @@ if (isset($_GET['search']) && $_GET['search']!=""){
     $params= ["nosaukums"=>$search_query];
 }
 
-$posts = $db->query($select, $params)->fetchAll();
+$category = $db->query($select, $params)->fetchAll();
 
 
 $pageTitle = "Categories";
-require "views/categories/categories.view.php";
+require "views/categories/index.view.php";
